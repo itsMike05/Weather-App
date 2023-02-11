@@ -8,6 +8,8 @@ void main() {
 class WeatherApp extends StatelessWidget {
   const WeatherApp({super.key});
 
+// https://api.openweathermap.org/data/2.5/weather?q=London&appid=71c276bd62c8811e1be99b6686411878&units=metric
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
