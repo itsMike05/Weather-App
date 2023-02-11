@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 249, 249, 249),
       appBar: AppBar(
-        elevation: 5,
+        elevation: 2,
         backgroundColor: const Color.fromARGB(255, 249, 249, 249),
         centerTitle: true,
         title: const Text(
