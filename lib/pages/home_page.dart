@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/model/weather.dart';
 import 'package:weather_app/pages/additional_info_page.dart';
 import 'package:weather_app/pages/weather_page.dart';
+import 'package:weather_app/services/weather_api.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -10,6 +12,9 @@ class HomePage extends StatefulWidget {
 }
 
 // Main container color Color.fromARGB(109, 72, 47, 180)
+
+WeatherApi client = WeatherApi();
+Weather? data = Weather();
 
 class _HomePageState extends State<HomePage> {
   @override
