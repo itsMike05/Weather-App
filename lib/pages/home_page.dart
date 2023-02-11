@@ -18,7 +18,7 @@ WeatherApi weatherClient = WeatherApi();
 Weather? weatherData;
 
 Future<void> getWeatherData() async {
-  weatherData = await weatherClient.getCurrentWeather("Bydgoszcz");
+  weatherData = await weatherClient.getCurrentWeather("London");
 }
 
 class _HomePageState extends State<HomePage> {
@@ -45,25 +45,46 @@ class _HomePageState extends State<HomePage> {
           color: Colors.black,
         ),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          // Primary weather information
-          weatherPage(Icons.sunny, "27.6 °C", "Bydgoszcz"),
-          const SizedBox(height: 50.0),
-          const Text(
-            "Secondary statistics",
-            style: TextStyle(
-              color: Color.fromARGB(221, 33, 33, 33),
-              fontSize: 24.0,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const Divider(thickness: 2),
-          const SizedBox(height: 50.0),
-          // Additional weather information
-          additionalInformation("73%", "17", "12", "1028"),
-        ],
+      body: FutureBuilder(
+        future: getWeatherData(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.done &&
+              snapshot.hasData) {
+            // Connection successful
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                // Primary weather information
+                weatherPage(Icons.sunny, "${weatherData!.temp}",
+                    "${weatherData!.cityName}"),
+                const SizedBox(height: 50.0),
+                const Text(
+                  "Secondary statistics",
+                  style: TextStyle(
+                    color: Color.fromARGB(221, 33, 33, 33),
+                    fontSize: 24.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const Divider(thickness: 2),
+                const SizedBox(height: 50.0),
+                // Additional weather information
+                additionalInformation(
+                    "${weatherData!.humidity}",
+                    "${weatherData!.wind}",
+                    "${weatherData!.feelsLike}",
+                    "${weatherData!.pressure}"),
+              ],
+            );
+          } else if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        },
       ),
     );
   }

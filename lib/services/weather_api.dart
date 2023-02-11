@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:http/http.dart' as http;
 import 'package:weather_app/model/weather.dart';
 
@@ -10,6 +9,8 @@ class WeatherApi {
 
     var response = await http.get(endpoint);
     var weatherBody = jsonDecode(response.body);
+
+    // print(weatherBody["sys"].toString());
 
     return Weather.fromJson(weatherBody);
   }
