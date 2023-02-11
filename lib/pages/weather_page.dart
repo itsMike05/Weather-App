@@ -18,10 +18,11 @@ Widget weatherPage(IconData weatherIcon, String temp, String location) {
           style: const TextStyle(fontSize: 36, fontWeight: FontWeight.w500),
         ),
         const SizedBox(height: 15.0),
-        Text(
-          location,
-          style: const TextStyle(fontSize: 28, fontWeight: FontWeight.w300),
-        )
+        Text(location,
+            style: const TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.w500,
+                color: Color(0XFF5a5a5a))),
       ],
     ),
   );
