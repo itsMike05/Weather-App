@@ -10,7 +10,7 @@ class WeatherApi {
     var response = await http.get(endpoint);
     var weatherBody = jsonDecode(response.body);
 
-    // print(weatherBody["sys"].toString());
+    print(weatherBody);
 
     return Weather.fromJson(weatherBody);
   }
