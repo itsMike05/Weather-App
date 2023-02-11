@@ -11,7 +11,7 @@ class WeatherApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Container(
-      color: Colors.yellow,
+      color: const Color.fromARGB(109, 72, 47, 180),
     ));
   }
 }
