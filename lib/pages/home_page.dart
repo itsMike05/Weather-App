@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:weather_app/model/weather.dart';
 import 'package:weather_app/pages/additional_info_page.dart';
 import 'package:weather_app/pages/weather_page.dart';
@@ -38,7 +39,8 @@ class _HomePageState extends State<HomePage> {
               color: Colors.black),
         ),
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () => Fluttertoast.showToast(
+              msg: "Nothing here yet!", toastLength: Toast.LENGTH_LONG),
           icon: const Icon(Icons.menu_rounded),
           color: Colors.black,
         ),
