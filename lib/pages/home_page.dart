@@ -32,7 +32,10 @@ class _HomePageState extends State<HomePage> {
           color: Colors.black,
         ),
       ),
-      body: const Placeholder(),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [],
+      ),
     );
   }
 }
