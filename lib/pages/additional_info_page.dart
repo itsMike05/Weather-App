@@ -5,6 +5,8 @@ TextStyle mainFont =
 TextStyle infoFont =
     const TextStyle(fontSize: 18.0, fontWeight: FontWeight.w700);
 
+const sizedBoxHeight = 60.0;
+
 Widget additionalInformation(
     String humidity, String wind, String feelsLike, String pressure) {
   return Container(
@@ -26,7 +28,7 @@ Widget additionalInformation(
                   "Wind",
                   style: mainFont,
                 ),
-                const SizedBox(height: 60.0),
+                const SizedBox(height: sizedBoxHeight),
                 Text("Pressure", style: mainFont),
               ],
             ),
@@ -38,7 +40,7 @@ Widget additionalInformation(
                   "$wind m/s",
                   style: infoFont,
                 ),
-                const SizedBox(height: 60.0),
+                const SizedBox(height: sizedBoxHeight),
                 Text("$pressure hPa", style: infoFont),
               ],
             ),
@@ -50,7 +52,7 @@ Widget additionalInformation(
                   "Feels like",
                   style: mainFont,
                 ),
-                const SizedBox(height: 60.0),
+                const SizedBox(height: sizedBoxHeight),
                 Text("Humidity", style: mainFont),
               ],
             ),
@@ -62,7 +64,7 @@ Widget additionalInformation(
                   "$feelsLike °C",
                   style: infoFont,
                 ),
-                const SizedBox(height: 60.0),
+                const SizedBox(height: sizedBoxHeight),
                 Text("$humidity %", style: infoFont),
               ],
             ),
