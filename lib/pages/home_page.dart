@@ -36,7 +36,20 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          // Primary weather information
           weatherPage(Icons.sunny, "27.6", "Bydgoszcz"),
+          const SizedBox(height: 50.0),
+          const Text(
+            "Secondary statistics",
+            style: TextStyle(
+              color: Color.fromARGB(221, 33, 33, 33),
+              fontSize: 24.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const Divider(thickness: 2),
+          const SizedBox(height: 50.0),
+          // Additional weather information
         ],
       ),
     );
