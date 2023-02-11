@@ -48,8 +48,8 @@ class _HomePageState extends State<HomePage> {
       body: FutureBuilder(
         future: getWeatherData(),
         builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.done &&
-              snapshot.hasData) {
+          if (snapshot.hasData) {
+            print("Success!");
             // Connection successful
             return Column(
               crossAxisAlignment: CrossAxisAlignment.center,
