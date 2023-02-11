@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/pages/weather_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -13,10 +14,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 249, 249, 249),
+      backgroundColor: const Color.fromARGB(255, 249, 249, 249),
       appBar: AppBar(
-        elevation: 10,
-        backgroundColor: Color.fromARGB(255, 249, 249, 249),
+        elevation: 5,
+        backgroundColor: const Color.fromARGB(255, 249, 249, 249),
         centerTitle: true,
         title: const Text(
           "Weather",
@@ -34,7 +35,9 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: [],
+        children: [
+          weatherPage(Icons.sunny, "27.6", "Bydgoszcz"),
+        ],
       ),
     );
   }
