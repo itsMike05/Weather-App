@@ -6,7 +6,7 @@ TextStyle infoFont =
     const TextStyle(fontSize: 18.0, fontWeight: FontWeight.w700);
 
 Widget additionalInformation(
-    String humidity, String wind, String feels_like, String pressure) {
+    String humidity, String wind, String feelsLike, String pressure) {
   return Container(
     width: double.infinity,
     padding: const EdgeInsets.all(10.0),
@@ -59,7 +59,7 @@ Widget additionalInformation(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "$feels_like °C",
+                  "$feelsLike °C",
                   style: infoFont,
                 ),
                 const SizedBox(height: 60.0),
