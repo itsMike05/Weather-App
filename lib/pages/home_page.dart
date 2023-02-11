@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/pages/additional_info_page.dart';
 import 'package:weather_app/pages/weather_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -50,6 +51,7 @@ class _HomePageState extends State<HomePage> {
           const Divider(thickness: 2),
           const SizedBox(height: 50.0),
           // Additional weather information
+          additionalInformation("73%", "17", "12", "1028"),
         ],
       ),
     );
