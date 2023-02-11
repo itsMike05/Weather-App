@@ -13,8 +13,12 @@ class HomePage extends StatefulWidget {
 
 // Main container color Color.fromARGB(109, 72, 47, 180)
 
-WeatherApi client = WeatherApi();
-Weather? data = Weather();
+WeatherApi weatherClient = WeatherApi();
+Weather? weatherData;
+
+Future<void> getWeatherData() async {
+  weatherData = await weatherClient.getCurrentWeather("Bydgoszcz");
+}
 
 class _HomePageState extends State<HomePage> {
   @override
