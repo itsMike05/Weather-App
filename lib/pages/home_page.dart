@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           // Primary weather information
-          weatherPage(Icons.sunny, "27.6", "Bydgoszcz"),
+          weatherPage(Icons.sunny, "27.6 °C", "Bydgoszcz"),
           const SizedBox(height: 50.0),
           const Text(
             "Secondary statistics",
