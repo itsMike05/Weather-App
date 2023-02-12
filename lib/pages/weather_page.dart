@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:logger/logger.dart';
 
 const sizedBoxHeight = 15.0;
+
+Logger logger = Logger();
 
 Widget weatherPage(IconData weatherIcon, String temp, String location) {
   return Material(
