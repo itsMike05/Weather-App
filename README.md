@@ -7,3 +7,4 @@ Simple Weather App built with:
 - Fluttertoast
 - Lottie splash screen [in progress]
 
+TODO: Get user location instead of typing it in the code
