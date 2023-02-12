@@ -21,8 +21,8 @@ class Weather {
       temp: json["main"]["temp"],
       feelsLike: json["main"]["feels_like"],
       pressure: json["main"]["pressure"],
-      //humidity: json["main"]["humidity"],
-      //wind: json["wind"]["speed"],
+      humidity: json["main"]["humidity"],
+      wind: json["wind"]["speed"],
     );
     // cityName = json["name"];
     // temp = json["main"]["temp"];
