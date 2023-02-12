@@ -14,14 +14,14 @@ class HomePage extends StatefulWidget {
 
 // Main container color Color.fromARGB(109, 72, 47, 180)
 
-WeatherApi weatherClient = WeatherApi();
-Weather? weatherData;
-
-Future<void> getWeatherData() async {
-  weatherData = await weatherClient.getCurrentWeather("London");
-}
-
 class _HomePageState extends State<HomePage> {
+  WeatherApi weatherClient = WeatherApi();
+  Weather? weatherData;
+
+  Future<void> getWeatherData() async {
+    weatherData = await weatherClient.getCurrentWeather("Bydgoszcz");
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,13 +76,13 @@ class _HomePageState extends State<HomePage> {
                     "${weatherData!.pressure}"),
               ],
             );
-          } else if (snapshot.connectionState == ConnectionState.waiting) {
+          } else if (!snapshot.hasData) {
             return const Center(
               child: CircularProgressIndicator(),
             );
           }
-          return const Center(
-            child: CircularProgressIndicator(),
+          return Center(
+            child: Container(),
           );
         },
       ),
