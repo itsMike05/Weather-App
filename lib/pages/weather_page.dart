@@ -19,7 +19,7 @@ Widget weatherPage(IconData weatherIcon, String temp, String location) {
           ),
           const SizedBox(height: sizedBoxHeight),
           Text(
-            temp,
+            "$temp °C",
             style: const TextStyle(fontSize: 36, fontWeight: FontWeight.w500),
           ),
           const SizedBox(height: sizedBoxHeight),

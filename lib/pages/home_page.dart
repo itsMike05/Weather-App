@@ -21,11 +21,14 @@ class _HomePageState extends State<HomePage> {
   WeatherApi weatherClient = WeatherApi();
   Weather? weatherData;
 
-  Future<void>? getWeatherData() async {
+  Future? getWeatherData() async {
     weatherData = await weatherClient.getCurrentWeather("Bydgoszcz");
+
     if (weatherData.toString() == "") {
       print("Something went wrong");
     }
+    print(weatherData);
+    return weatherData;
   }
 
   @override
@@ -86,9 +89,6 @@ class _HomePageState extends State<HomePage> {
               child: CircularProgressIndicator(),
             );
           }
-          return Center(
-            child: Container(),
-          );
         },
       ),
     );

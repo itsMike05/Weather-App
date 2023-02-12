@@ -14,12 +14,14 @@ class Weather {
       this.temp,
       this.wind});
 
-  Weather.fromJson(Map<String, dynamic> json) {
-    cityName = json["name"];
-    temp = json["main"]["temp"];
-    feelsLike = json["main"]["feels_like"];
-    pressure = json["main"]["pressure"];
-    humidity = json["main"]["humidity"];
-    wind = json["wind"]["speed"];
+  factory Weather.fromJson(Map<String, dynamic> json) {
+    print(json);
+    return Weather(cityName: json["name"], temp: json["main"]["temp"]);
+    // cityName = json["name"];
+    // temp = json["main"]["temp"];
+    // feelsLike = json["main"]["feels_like"];
+    // pressure = json["main"]["pressure"];
+    // humidity = json["main"]["humidity"];
+    // wind = json["wind"]["speed"];
   }
 }
