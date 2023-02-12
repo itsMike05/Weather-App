@@ -21,7 +21,7 @@ class WeatherApi {
     Weather weather = Weather.fromJson(weatherBody);
 
     //print(endpoint);
-    //print(weatherBody);
+    print(weatherBody);
     print(weather.temp);
     return weather;
     //return Weather.fromJson(weatherBody);

@@ -23,6 +23,9 @@ class _HomePageState extends State<HomePage> {
 
   Future<void>? getWeatherData() async {
     weatherData = await weatherClient.getCurrentWeather("Bydgoszcz");
+    if (weatherData.toString() == "") {
+      print("Something went wrong");
+    }
   }
 
   @override
@@ -78,7 +81,7 @@ class _HomePageState extends State<HomePage> {
                     "${weatherData!.pressure}"),
               ],
             );
-          } else if (!snapshot.hasData) {
+          } else {
             return const Center(
               child: CircularProgressIndicator(),
             );
