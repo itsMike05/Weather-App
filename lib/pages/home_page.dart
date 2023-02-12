@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:logger/logger.dart';
 import 'package:weather_app/model/weather.dart';
 import 'package:weather_app/pages/additional_info_page.dart';
 import 'package:weather_app/pages/weather_page.dart';
 import 'package:weather_app/services/weather_api.dart';
+
+Logger logger = Logger();
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -18,7 +21,7 @@ class _HomePageState extends State<HomePage> {
   WeatherApi weatherClient = WeatherApi();
   Weather? weatherData;
 
-  Future<void> getWeatherData() async {
+  Future<void>? getWeatherData() async {
     weatherData = await weatherClient.getCurrentWeather("Bydgoszcz");
   }
 
@@ -49,7 +52,6 @@ class _HomePageState extends State<HomePage> {
         future: getWeatherData(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            print("Success!");
             // Connection successful
             return Column(
               crossAxisAlignment: CrossAxisAlignment.center,
