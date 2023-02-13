@@ -4,7 +4,7 @@ const sizedBoxHeight = 15.0;
 
 Widget weatherPage(IconData weatherIcon, String temp, String location) {
   return Material(
-    elevation: 10,
+    elevation: 1,
     borderRadius: const BorderRadius.all(Radius.circular(30.0)),
     child: Center(
       child: Column(

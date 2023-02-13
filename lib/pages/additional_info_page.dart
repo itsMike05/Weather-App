@@ -11,7 +11,7 @@ Widget additionalInformation(
     String humidity, String wind, String feelsLike, String pressure) {
   return Material(
     borderRadius: const BorderRadius.all(Radius.circular(30.0)),
-    elevation: 10,
+    elevation: 1,
     child: Container(
       width: double.infinity,
       padding: const EdgeInsets.all(30.0),
