@@ -24,10 +24,6 @@ class _HomePageState extends State<HomePage> {
   Future? getWeatherData() async {
     weatherData = await weatherClient.getCurrentWeather("Bydgoszcz");
 
-    if (weatherData.toString() == "") {
-      print("Something went wrong");
-    }
-    print(weatherData);
     return weatherData;
   }
 

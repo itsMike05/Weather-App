@@ -15,7 +15,7 @@ class Weather {
       this.wind});
 
   factory Weather.fromJson(Map<String, dynamic> json) {
-    print(json);
+    // print(json);
     return Weather(
       cityName: json["name"],
       temp: json["main"]["temp"],

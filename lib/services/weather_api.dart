@@ -7,16 +7,10 @@ class WeatherApi {
     var endpoint = Uri.parse(
         "https://api.openweathermap.org/data/2.5/weather?q=$location&appid=71c276bd62c8811e1be99b6686411878&units=metric");
 
-    print(location);
-    print(endpoint);
+    // print(location);
+    // print(endpoint);
 
     final response = await http.get(endpoint);
-
-    if (response.statusCode == 200) {
-      print("API Code 200");
-    } else {
-      print("API Error");
-    }
     var weatherBody = jsonDecode(response.body);
     return Weather.fromJson(weatherBody);
   }
