@@ -20,6 +20,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   WeatherApi weatherClient = WeatherApi();
   Weather? weatherData;
+  final TextEditingController _cityController = TextEditingController();
 
   Future? getWeatherData() async {
     weatherData = await weatherClient.getCurrentWeather("Bydgoszcz");
